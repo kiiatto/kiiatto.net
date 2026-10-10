@@ -1,9 +1,30 @@
 :root {
-    --background-color: #222222;
-    --text-color: #898900
+    --background-color: rgba(0, 0, 0, 50%);
+    --text-color: #ffffff;
+    --gap: 15px;
+    --section-border: 5px solid rgba(0, 0, 0, 75%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: linear-gradient(#ca6603, black);
+    background-attachment: fixed;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color)
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+}
+a:visited {
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
 }

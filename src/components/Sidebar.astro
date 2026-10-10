@@ -1,0 +1,53 @@
+<aside>
+    <div id="heading">
+        <h1>kiiatto's site</h1>
+    </div>
+    <div id="sidebar-content">
+        <nav>
+            <a href="/">home</a>
+            <a href="/blog">blog</a>
+            <a href="/about">about</a>
+        </nav>
+    </div>
+</aside>
+
+<style>
+    aside {
+        border: var(--section-border);
+        background-color: var(--background-color);
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+
+    a {
+        background-color: var(--background-color);
+        padding: 15px 30px;
+        text-decoration: none;
+        &:visited {
+            color: var(--text-color);
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    #heading {
+        background-color: var(--background-color);
+        h1 {
+            margin: 0;
+        }
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        padding: var(--gap);
+        align-items: center;
+    }
+
+    #sidebar-content {
+        padding: var(--gap);
+    }
+</style>

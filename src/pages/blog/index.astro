@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+type Post = CollectionEntry<"blog">;
+
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const pad = (n: number) => String(n).padStart(2, "0");
+
+const postUrl = (p: Post) => {
+    const d = p.data.pubDate;
+    return `/blog/${p.id}`;
+};
+
+const dateLabel = (d: Date) =>
+    d.toLocaleDateString("en-NZ", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        timeZone: "UTC",
+    });
+---
+
+<Base title="blog">
+    {posts.length === 0 && <p>No posts yet.</p>}
+    <ul>
+        {posts.map((post) => (
+            <li>
+                <a href={postUrl(post)}>{post.data.title}</a>
+                {" - "}
+                <time datetime={post.data.pubDate.toISOString()}>
+                    {dateLabel(post.data.pubDate)}
+                </time>
+            </li>
+        ))}
+    </ul>
+</Base>

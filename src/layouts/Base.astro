@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import "@fontsource/comic-relief";
 interface Props {
     title: string;
 }
@@ -15,13 +16,66 @@ let { title } = Astro.props;
             content="width=device-width, initial-scale=1.0"
             data-rh="true"
         />
-        <link rel="icon" href="/favicon.png" type="image/xicon" />
+        <link rel="icon" type="image/xicon" href="/favicon.png" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="cat blog"
+            href={new URL("rss.xml", Astro.site)}
+        />
         <title>{title} | kiiatto</title>
     </head>
     <body>
-        <Header />
+        <Sidebar />
         <main>
-            <slot />
+            <div id="main-heading">
+                <h1>{title}</h1>
+            </div>
+            <div id="main-content">
+                <slot />
+            </div>
         </main>
     </body>
 </html>
+
+<style>
+    body {
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap);
+        padding: var(--gap);
+        max-width: 1155px;
+        font-family: "Comic Relief";
+    }
+
+    main {
+        max-width: 840px;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        width: 100%;
+        border: var(--section-border);
+        background-color: var(--background-color);
+    }
+
+    #main-heading {
+        background-color: var(--background-color);
+        height: 75px;
+        display: flex;
+        justify-content: left;
+        padding: var(--gap);
+        align-items: center;
+        h1 {
+            margin: 0;
+        }
+    }
+
+    #main-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        padding: var(--gap);
+    }
+</style>
