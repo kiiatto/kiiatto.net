@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import { satteriBreaks } from 'satteri-breaks';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +12,6 @@ export default defineConfig({
     processor: satteri({
       mdastPlugins: [satteriBreaks()]
     }),
-  }
+  },
+  integrations: [sitemap()]
 });

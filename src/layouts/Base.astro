@@ -23,6 +23,7 @@ let { title } = Astro.props;
             title="cat blog"
             href={new URL("rss.xml", Astro.site)}
         />
+        <link rel="sitemap" href="/sitemap-index.xml" />
         <title>{title} | kiiatto</title>
     </head>
     <body>
