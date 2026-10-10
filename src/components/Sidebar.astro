@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 let counterUrl = "";
 if (import.meta.env.DEV) {
     counterUrl = "https://count.camora.dev/@index";
@@ -11,7 +10,7 @@ if (import.meta.env.DEV) {
 
 <aside>
     <div id="heading" class="kiiattos-site">
-        <a href="https://kiiatto.net/">
+        <a id="sidebar-title" href="https://kiiatto.net/">
             <h1>kiiatto's site</h1>
         </a>
     </div>
@@ -19,7 +18,7 @@ if (import.meta.env.DEV) {
         <nav>
             <a href="/">home</a>
             <a href="/blog">blog</a>
-            <a href="/about">about</a>
+            <a href="/music">music</a>
         </nav>
         <br />
         <h3>find me on other places!</h3>
@@ -109,13 +108,6 @@ if (import.meta.env.DEV) {
         margin-bottom: var(--gap);
     }
 
-    a {
-        text-decoration: underline;
-        &:hover {
-            text-decoration: underline wavy;
-        }
-    }
-
     #heading {
         background-color: var(--background-color);
         h1 {
@@ -148,6 +140,13 @@ if (import.meta.env.DEV) {
             flex-grow: 1;
             margin-top: auto;
             align-items: flex-end;
+        }
+    }
+
+    #sidebar-title {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline wavy;
         }
     }
 </style>
