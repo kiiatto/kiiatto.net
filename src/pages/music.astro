@@ -1,13 +1,14 @@
 ---
 import Base from "../layouts/Base.astro";
+import { Image } from "astro:assets";
 ---
 
 <Base title="music">
     <a href="https://last.fm/user/catto24">
-        <img
+        <Image
             src="https://lastfm-recently-played.vercel.app/api?user=catto24"
-            height="360"
-            width="auto"
+            height="321"
+            width="400"
             alt="last.fm"
         />
     </a>
