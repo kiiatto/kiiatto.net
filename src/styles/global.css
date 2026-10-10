@@ -21,7 +21,12 @@ body {
 
 a {
     color: var(--text-color);
+    text-decoration: underline;
+    &:hover {
+        text-decoration: underline wavy;
+    }
 }
+
 a:visited {
     color: inherit;
 }

@@ -1,5 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
+let counterUrl = "";
+if (import.meta.env.DEV) {
+    counterUrl = "https://count.camora.dev/@index";
+} else {
+    counterUrl =
+        "https://count.camora.dev/@:kiiatto-net?name=%3Akiiatto-net&theme=booru-r6gdrawfriends&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto";
+}
 ---
 
 <aside>
@@ -70,11 +77,7 @@ import { Icon } from "astro-icon/components";
             </li>
         </ul>
         <div id="visitor-counter">
-            <img
-                src="https://count.camora.dev/@:kiiatto-net?name=%3Akiiatto-net&theme=booru-r6gdrawfriends&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
-                width="100%"
-                height="auto"
-            />
+            <img src={counterUrl} width="100%" height="auto" />
         </div>
     </div>
 </aside>
@@ -107,9 +110,9 @@ import { Icon } from "astro-icon/components";
     }
 
     a {
-        text-decoration: none;
+        text-decoration: underline;
         &:hover {
-            text-decoration: underline;
+            text-decoration: underline wavy;
         }
     }
 
