@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
 import "@fontsource/comic-relief";
 interface Props {
     title: string;
@@ -27,15 +28,18 @@ let { title } = Astro.props;
         <title>{title} | kiiatto</title>
     </head>
     <body>
-        <Sidebar />
-        <main>
-            <div id="main-heading">
-                <h1>{title}</h1>
-            </div>
-            <div id="main-content">
-                <slot />
-            </div>
-        </main>
+        <div id="sidebar-and-main">
+            <Sidebar />
+            <main>
+                <div id="main-heading">
+                    <h1>{title}</h1>
+                </div>
+                <div id="main-content">
+                    <slot />
+                </div>
+            </main>
+        </div>
+        <Footer />
     </body>
 </html>
 
@@ -44,11 +48,20 @@ let { title } = Astro.props;
         margin: 0 auto;
         min-height: 100vh;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: var(--gap);
         padding: var(--gap);
         max-width: 1155px;
         font-family: "Comic Relief";
+    }
+
+    #sidebar-and-main {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap);
+        max-width: 1155px;
+        flex-grow: 1;
+        min-height: calc(100vh - var(--gap) * 2);
     }
 
     main {

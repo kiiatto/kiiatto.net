@@ -1,0 +1,170 @@
+---
+import Badge from "./Badge.astro";
+const year = new Date().getFullYear().toString();
+---
+
+<footer>
+    <div class="badge-box">
+        <Badge
+            src="/88x31/kiiatto.net.png"
+            label="my button :3"
+            href="https://kiiatto.net/"
+        />
+        <Badge
+            src="/88x31/blahaj_certified.png"
+            label="blahaj certified"
+            href="https://equinoxx.dev/"
+        />
+        <Badge
+            src="/88x31/tailias.png"
+            label="Tailias"
+            href="https://tailias.net"
+        />
+        <Badge
+            src="/88x31/hsp.gif"
+            label="hemisputnik"
+            href="https://512b.dev/hsp"
+        />
+        <Badge
+            src="/88x31/gordinator.png"
+            label="Gordinator"
+            href="https://gordinator.org"
+        />
+        <Badge
+            src="/88x31/matrix.png"
+            label="matrix"
+            href="https://matrix.to/#/@catto:equinoxx.dev"
+        />
+        <Badge
+            src="/88x31/bluesky.png"
+            label="bluesky"
+            href="https://bsky.app/profile/kiiatto.net"
+        />
+        <Badge
+            src="/88x31/proton_mail.png"
+            label="proton mail"
+            href="mailto:kiiatto@proton.me"
+        />
+        <Badge
+            src="/88x31/discord.gif"
+            label="discord"
+            href="https://discord.com/users/887265967770583070"
+        />
+        <Badge
+            src="/88x31/lastfm.png"
+            label="last.fm"
+            href="https://last.fm/user/catto24"
+        />
+        <Badge
+            src="/88x31/kate.pet.png"
+            label="kate.pet's 88x31s"
+            href="https://88x31.kate.pet"
+        />
+        <Badge
+            src="/88x31/astro.png"
+            label="powered by astro"
+            href="https://astro.build/"
+        />
+        <Badge
+            src="/88x31/ban_timetravel.jpg"
+            label='BAN TIME TRAVEL "NOW"'
+            href=""
+        />
+        <Badge
+            src="/88x31/zen_browser.png"
+            label="i use zen btw"
+            href="https://zen-browser.app/"
+        />
+        <Badge
+            src="/88x31/femtanyl.png"
+            label="femtanyl"
+            href="https://femtanyl.bandcamp.com"
+        />
+        <Badge
+            src="/88x31/twopaws.png"
+            label="made with my own two paws"
+            href="https://kate.pet"
+        />
+        <Badge
+            src="/88x31/made_on_linux.png"
+            label="made on linux"
+            href="https://kernel.org"
+        />
+        <Badge
+            src="/88x31/tf.gif"
+            label="Twin Fantasy"
+            href="https://carseatheadrest.bandcamp.com/"
+        />
+        <Badge
+            src="/88x31/poweredbythevoid.gif"
+            label="powered by the void"
+            href=""
+        />
+        <Badge
+            src="/88x31/no_fkn_thanks.gif"
+            label="no fucking thanks"
+            href=""
+        />
+        <Badge
+            src="/88x31/right_to_repair.jpg"
+            label="i support right to repair"
+            href=""
+        />
+        <Badge
+            src="/88x31/xenia_now.png"
+            label="xenia"
+            href="https://kernel.org"
+        />
+        <Badge
+            src="/88x31/got_html.png"
+            label="got html?"
+            href="https://en.wikipedia.org/wiki/HTML"
+        />
+        <Badge
+            src="/88x31/best_viewed_with_eyes.gif"
+            label="best viewed with eyes"
+            href=""
+        />
+        <Badge
+            src="/88x31/flag-pan.png"
+            label="i am a pansexual!!!!!!!!!!!!!!"
+            href=""
+        />
+    </div>
+    <p>
+        Source{" "}
+        <a href="https://github.com/kiiatto/kiiatto.net" target="_blank">
+            available here
+        </a>
+        . &copy; <a href="https://kiiatto.net">kiiatto</a> {year}.
+    </p>
+    <iframe
+        src="https://john.citrons.xyz/embed?ref=kiiatto.net"
+        style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"
+    ></iframe>
+</footer>
+
+<style>
+    footer {
+        border: var(--section-border);
+        background-color: var(--background-color);
+        padding: var(--gap);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap);
+    }
+
+    .badge-box {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap);
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        margin: 0;
+    }
+</style>

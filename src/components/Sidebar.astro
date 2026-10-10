@@ -1,6 +1,12 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <aside>
-    <div id="heading">
-        <h1>kiiatto's site</h1>
+    <div id="heading" class="kiiattos-site">
+        <a href="https://kiiatto.net/">
+            <h1>kiiatto's site</h1>
+        </a>
     </div>
     <div id="sidebar-content">
         <nav>
@@ -8,6 +14,68 @@
             <a href="/blog">blog</a>
             <a href="/about">about</a>
         </nav>
+        <br />
+        <h3>find me on other places!</h3>
+        <ul>
+            <li>
+                <a href="mailto:kiiatto@proton.me" target="_blank">
+                    email
+                </a>
+            </li>
+            <li>
+                <a href="https://twitch.tv/kiiatto" target="_blank">
+                    twitch
+                </a>
+            </li>
+            <li>
+                <a
+                    href="https://matrix.to/#/@catto:equinoxx.dev"
+                    target="_blank"
+                >
+                    matrix
+                </a>
+            </li>
+            <li>
+                <a
+                    href="https://discord.com/users/887265967770583070"
+                    target="_blank"
+                >
+                    discord
+                </a>
+            </li>
+            <li>
+                <a href="https://bsky.app/profile/kiiatto.net" target="_blank">
+                    bluesky
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com/@kiiatto" target="_blank">
+                    youtube
+                </a>
+            </li>
+        </ul>
+        <h3>visit my friends!</h3>
+        <ul>
+            <li>
+                <a href="https://ollieis.online/">ollie</a>
+            </li>
+            <li>
+                <a href="https://tailias.net">tailias</a>
+            </li>
+            <li>
+                <a href="https://equinoxx.dev/">equinoxx</a>
+            </li>
+            <li>
+                <a href="https://gordinator.org">gordinator</a>
+            </li>
+        </ul>
+        <div id="visitor-counter">
+            <img
+                src="https://count.camora.dev/@:kiiatto-net?name=%3Akiiatto-net&theme=booru-r6gdrawfriends&padding=4&offset=0&align=top&scale=1&pixelated=1&darkmode=auto"
+                width="100%"
+                height="auto"
+            />
+        </div>
     </div>
 </aside>
 
@@ -15,21 +83,31 @@
     aside {
         border: var(--section-border);
         background-color: var(--background-color);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
     }
 
     nav {
         display: flex;
         flex-direction: column;
         gap: var(--gap);
+        a {
+            background-color: var(--background-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            &:visited {
+                color: var(--text-color);
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        margin-bottom: var(--gap);
     }
 
     a {
-        background-color: var(--background-color);
-        padding: 15px 30px;
         text-decoration: none;
-        &:visited {
-            color: var(--text-color);
-        }
         &:hover {
             text-decoration: underline;
         }
@@ -45,9 +123,28 @@
         justify-content: center;
         padding: var(--gap);
         align-items: center;
+        color: var(--special-text-color);
     }
 
     #sidebar-content {
         padding: var(--gap);
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        ul {
+            list-style-type: " -    ";
+            padding-left: 40px;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        h3 {
+            margin-bottom: var(--gap);
+        }
+        #visitor-counter {
+            display: flex;
+            flex-grow: 1;
+            margin-top: auto;
+            align-items: flex-end;
+        }
     }
 </style>

@@ -3,6 +3,7 @@
     --text-color: #ffffff;
     --gap: 15px;
     --section-border: 5px solid rgba(0, 0, 0, 75%);
+    --special-text-color: #fc7f02;
 }
 
 * {
